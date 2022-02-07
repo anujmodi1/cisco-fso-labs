@@ -1,5 +1,5 @@
-name='us-west-1'
-region='us-west-1'
-az='us-west-1a'
+name='us-west-2a'
+region='us-west-2'
+az='us-west-2a'
 csr_ami_id='ami-0b6cee046d4cae9a9'
 ubuntu_ami_id='ami-0c5db8b1650fb4b47'
