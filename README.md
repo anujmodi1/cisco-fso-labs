@@ -82,16 +82,10 @@ For an instructor wanting each student to have their own lab, they would select 
 target the ci tool using fly and set your pipeline
 example:
 Login to a Team
-fly -t ci login --concourse-url=http://ci.devops-ontap.com:8080 -n nterone
+fly -t ci login --concourse-url=http://ci.devops-ontap.com:8080 -n yourteamname
 This command opens a browser, login and then capture the token and paste it into your command prompt
 
-10. set the pipeline and keep the pipeline suffix name the same as your lab name and your branch name for consistency, example:
-    fly -t ci set-pipeline -c pipeline-master-v1.yml -p cicsco-fso-lab1 -l ../params/pipeline-params.yml
-
-Update the lab_vars.py file accordingly
-git add  lab_vars.py
-git commit - "updated lab vars file"
-git push
+commit notes to your branch and check the lab_vars.py
 
 As soon as a git push is done to the branch, the first step in the pipeline
 automatically starts. This step:
@@ -110,6 +104,10 @@ Routes
 Internet Gateway
 Security Group
 Ingress Rules to allow SSH into lab
+
+The CICD tool and Vault are running in Kubernetes
+
+
 
 Once the Deploy AWS Env job turns green, start the Deploy Cisco CSR1000V job
 This job takes the longest, as before much of the code can execute it must wait on the
